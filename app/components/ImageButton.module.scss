@@ -1,0 +1,49 @@
+
+.article{
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--btn-idle);
+
+    border-radius: 4px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: var(--btn-hover);
+    }
+}
+
+.figure{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+
+    user-select: none;
+    
+    // relative prop for using fill state in next/Image Component
+    > div{
+    position: relative;
+    height: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.figcaption{
+    font-family: var(--font-zenkaku-gothic-medium);
+    flex-shrink: 1;
+    flex-grow: 1;
+    height: 100%;
+    padding-left: 14px;
+    font-size: 1.8rem;
+    text-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    > small{
+        text-align: right;
+    }
+}
