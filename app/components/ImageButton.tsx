@@ -1,20 +1,24 @@
 import style from "./ImageButton.module.scss"
 import Image from 'next/image'
 
-interface props{
+export interface ItemKeys{
+    serial?: string,
+    fileName: string,
+}
+export interface ItemValues{
     label: string,
-    keyword: string,
+    fileName: string,
     time: number | string,
-    serial: number | string,
-    onClickEvent: (newItem:string) => void,
+    serial?: string,
+    onClickEvent: (object : ItemKeys) => void,
 }
 
-const ImageButton: React.FC<props> = ({label, keyword, time, serial, onClickEvent}) =>{
+const ImageButton: React.FC<ItemValues> = ({label, fileName, time, serial, onClickEvent}) =>{
     return(
-        <article className={`${style.article}`} key={keyword} onClick={ () => onClickEvent(keyword)}>
+        <article className={`${style.article}`} key={fileName} onClick={ () => onClickEvent({ serial, fileName })}>
         <figure className={`${style.figure}`}>
             <div>
-                <Image src={"/images/" + keyword + ".png"} fill={true} alt={`${label}のBoothサムネイル画像`}/>
+                <Image src={"/images/" + fileName + ".png"} fill={true} alt={`${label}のBoothサムネイル画像`}/>
             </div>
             <figcaption className={`${style.figcaption}`}>
                 <cite>{label}</cite>

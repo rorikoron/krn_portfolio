@@ -1,22 +1,22 @@
 "use client"
 import ModelViewer from "../components/ModelViewer"
-import ImageButton from '../components/ImageButton'
+import ImageButton, { ItemKeys, ItemValues }from '../components/ImageButton'
 import style from "./page.module.scss"
 import { useState } from 'react'
 
 export default function (){
 
-    const [target, setTarget] = useState<string>('');
+    const [keys, setKeys] = useState<ItemKeys>({serial: '', fileName: ''});
 
 
     // ここは非同期でexcelなどからデータを引っ張れないか？
     // （ リードオンリーでBoothからスクレイピングするなど（タグで判断））
     const itemParams = [
-        { label: "えびへいろー", keyword: "ebihalo", time: "2024/09/24",serial: "6125665"},
-        { label: "ふりふりおひげ", keyword: "furifuriohige", time: "2024/09/24", serial: "6044362"},
+        { label: "えびへいろー", fileName: "ebihalo", time: "2024/09/24",serial: "6125665"},
+        { label: "ふりふりおひげ", fileName: "furifuriohige", time: "2024/09/24", serial: "6044362"},
     ]
     
-    const onClickEvent = (newItem : string) => { setTarget(newItem) };
+    const onClickEvent = (object : ItemKeys) => { setKeys(object); };
     return(
         <section>
             <h1>Product</h1>
@@ -24,11 +24,11 @@ export default function (){
 
 
             <section className={`${style.diaplayArea}`}>
-                <ModelViewer target={target}/>
+                <ModelViewer {...keys}/>
                 <main className={`${style.main}`}>
                     {
                         itemParams.map((item) => ((
-                            <ImageButton {...item} onClickEvent = {onClickEvent}/>
+                            <ImageButton key={item.fileName} {...item} onClickEvent={onClickEvent}/>
                         )))
                     }
                 </main>

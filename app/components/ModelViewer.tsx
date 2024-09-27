@@ -6,11 +6,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import style from "./ModelViewer.module.scss";
 import { GridHelper } from 'three';
 
-interface props{
-    target: string
-}
-const ModelViewer: React.FC<props> = ({target}) => {
-    if(target == ""){
+import { ItemKeys } from './ImageButton';
+
+const ModelViewer: React.FC<ItemKeys> = ({serial, fileName}) => {
+    if(fileName == ""){
          return(
             <div className={`${style.viewer}`}>
                 <p>表示するアイテムを選択して下さい。</p>
@@ -19,7 +18,7 @@ const ModelViewer: React.FC<props> = ({target}) => {
     }
 
     
-    const myModel = useLoader(GLTFLoader, `/models/${target}.glb`);
+    const myModel = useLoader(GLTFLoader, `/models/${fileName}.glb`);
     return (
         <div className={`${style.viewer}`}>
 
