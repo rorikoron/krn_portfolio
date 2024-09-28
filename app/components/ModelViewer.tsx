@@ -1,4 +1,4 @@
-import { Canvas, useLoader } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useFBX } from "@react-three/drei";
 import { GridHelper } from 'three';
 import style  from './ModelViewer.module.scss'
