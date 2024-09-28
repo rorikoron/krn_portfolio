@@ -1,21 +1,34 @@
 
 
-.diaplayArea{
+.content{
     display: grid;
     grid-template-columns: 60dvh 1fr;
 
     padding: 6rem 4rem;
 
-}
+    
+    &__viewer{
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        border-radius: 4px;
+        background-color: var(--btn-idle);
+        aspect-ratio: 1 / 1;
 
-.main{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: 120px;
-    padding: 0 16px;
-    gap: 12px;
-    scrollbar-gutter: stable;
+        > p{
+            font-size: 1.2rem;
+        }
+    }
 
-
-    position: relative;
+    &__models{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-auto-rows: 120px;
+        padding: 0 16px;
+        gap: 12px;
+        scrollbar-gutter: stable;
+    
+    
+        position: relative;
+    }
 }

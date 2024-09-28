@@ -1,10 +1,18 @@
 "use client"
 import ModelViewer from "../components/ModelViewer"
-import ImageButton, { ItemKeys, ItemValues }from '../components/ImageButton'
+import ImageButton, { ItemKeys }from '../components/ImageButton'
 import style from "./page.module.scss"
 import { useState } from 'react'
+import { NextPage } from "next"
 
-export default function (){
+
+const NotSelectedAssertion : React.FC = () => {
+    return(
+        <p>表示するアイテムを選択して下さい。</p>
+    )
+}
+
+const Page : NextPage = () => {
 
     const [keys, setKeys] = useState<ItemKeys>({serial: '', fileName: ''});
 
@@ -23,16 +31,26 @@ export default function (){
             <h2>拙いながらBlenderで作った3Dモデルを載せときます...</h2>
 
 
-            <section className={`${style.diaplayArea}`}>
-                <ModelViewer {...keys}/>
-                <main className={`${style.main}`}>
+            <section className={`${style.content}`}>
+                    
+                <div className={`${style.content__viewer}`}>
+                {(
+                    
+                    keys.serial === '' 
+                    ? <NotSelectedAssertion />
+                    : <ModelViewer {...keys}/>
+            )}
+                </div>
+                <aside className={`${style.content__models}`}>
                     {
                         itemParams.map((item) => ((
                             <ImageButton key={item.fileName} {...item} onClickEvent={onClickEvent}/>
                         )))
                     }
-                </main>
+                </aside>
             </section>
         </section>
     )
 }
+
+export default Page;
