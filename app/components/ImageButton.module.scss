@@ -2,7 +2,7 @@
 .article{
     height: 100%;
     width: 100%;
-    padding: 16px;
+    padding: max(2.5%, 8px);
     background-color: var(--btn-idle);
 
     border-radius: 4px;
@@ -36,7 +36,7 @@
     flex-shrink: 1;
     flex-grow: 1;
     height: 100%;
-    padding-left: 14px;
+    padding-left: max(2.5%, 8px);
     font-size: 1.8rem;
     text-wrap: nowrap;
     display: flex;

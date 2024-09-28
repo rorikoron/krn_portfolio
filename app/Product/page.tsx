@@ -1,6 +1,6 @@
 "use client"
 import ModelViewer from "../components/ModelViewer"
-import ImageButton, { ItemKeys }from '../components/ImageButton'
+import ModelSelector, { ItemKeys }from '../components/ModelSelector'
 import style from "./page.module.scss"
 import { useState } from 'react'
 import { NextPage } from "next"
@@ -8,7 +8,7 @@ import { NextPage } from "next"
 
 const NotSelectedAssertion : React.FC = () => {
     return(
-        <p>表示するアイテムを選択して下さい。</p>
+        <p className={`${style.warning}`}>表示するアイテムを選択して下さい。</p>
     )
 }
 
@@ -44,7 +44,7 @@ const Page : NextPage = () => {
                 <aside className={`${style.content__models}`}>
                     {
                         itemParams.map((item) => ((
-                            <ImageButton key={item.fileName} {...item} onClickEvent={onClickEvent}/>
+                            <ModelSelector key={item.fileName} {...item} onClickEvent={onClickEvent}/>
                         )))
                     }
                 </aside>
