@@ -15,7 +15,6 @@ export interface ItemValues{
 }
 
 const ModelSelector: React.FC<ItemValues> = ({label, fileName, time, serial, onClickEvent}) => {
-    const clickEvent = () => onClickEvent({serial, fileName});
     const Thumbnail : React.FC = () => (<Image src={"/images/" + fileName + ".png"} fill={true} alt={`${label}のBoothサムネイル画像`}/>)
     const Caption : React.FC = () => {
         return(
@@ -27,7 +26,9 @@ const ModelSelector: React.FC<ItemValues> = ({label, fileName, time, serial, onC
     }
 
     return(
-        <ImageButton key={fileName} Caption={Caption} Thumbnail={Thumbnail} onClickEvent={clickEvent} />
+        <div onClick={ () => onClickEvent({serial, fileName}) }>
+            <ImageButton key={fileName} Caption={<Caption />} Thumbnail={<Thumbnail />} />
+        </div>
     )
 }
 export default ModelSelector;

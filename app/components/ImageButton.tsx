@@ -1,21 +1,22 @@
+"use client"
+import { ReactElement } from 'react';
 import style from './ImageButton.module.scss'
 interface ImageButtonProps{
-    onClickEvent: () => void
-    Thumbnail: React.FC,
-    Caption: React.FC,
+    Thumbnail: ReactElement,
+    Caption: ReactElement,
 }
 
-const ImageButton : React.FC<ImageButtonProps> = ({onClickEvent, Thumbnail, Caption}) =>{
+const ImageButton : React.FC<ImageButtonProps> = ({ Thumbnail, Caption }) =>{
     
     return(
         
-        <article className={`${style.article}`} onClick={() => onClickEvent()}>
+        <article className={`${style.article}`}>
             <figure className={`${style.figure}`}>
                 <div>
-                    <Thumbnail />
+                    {Thumbnail}
                 </div>
                 <figcaption className={`${style.figcaption}`}>
-                    <Caption />
+                    {Caption}
                 </figcaption>
             </figure>
 

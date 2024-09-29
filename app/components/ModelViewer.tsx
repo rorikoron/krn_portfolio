@@ -1,19 +1,18 @@
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, useFBX } from "@react-three/drei";
-import { GridHelper } from 'three';
+import { GridHelper, Scene } from 'three';
 import style  from './ModelViewer.module.scss'
 import { ItemKeys } from './ModelSelector';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextPage } from 'next';
 import ImageButton from './ImageButton';
-const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
-    
-    const myModel = useFBX(`/models/${fileName}.fbx`);
 
+const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
+    const myModel = useFBX(`/models/${fileName}.fbx`);
     const Thumbnail : React.FC = () => {
         return(
-            <Image className={`${style.link__logo}`} src={`/images/ic__booth.svg`} fill={true} alt='Boothのロゴ画像'/>
+            <Image className={`${style.link__logo}`} src={`/logo/booth.svg`} fill={true} alt='Boothのロゴ画像'/>
         )
     }
     const Caption : React.FC = () => { 
@@ -21,7 +20,6 @@ const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
             <span className={`${style.link__legend}`}>Booth</span>
         )
     }
-    const clickEvent = () => (null);
     
     return (
         <>
@@ -32,8 +30,8 @@ const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
                 <primitive object={new GridHelper(20)} />
                 <OrbitControls />
             </Canvas>
-            <Link className={`${style.link}`} href={`https://booth.pm/ja/items/${serial}`}>
-                <ImageButton key="booth" Thumbnail={Thumbnail} Caption={Caption} onClickEvent={clickEvent}/>
+            <Link className={`${style.link}`} href={`https://booth.pm/ja/items/${serial}`} rel="noopener noreferrer" target="_blank">
+                <ImageButton key="booth" Thumbnail={<Thumbnail />} Caption={<Caption />} />
             </Link>
         </>
     );

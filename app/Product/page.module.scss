@@ -5,10 +5,8 @@
 .content{
     display: grid;
     grid-template-columns: 60dvh 1fr;
+    font-family: var(--font-zenkaku-gothic-medium);
 
-    padding: 6rem 4rem;
-
-    
     &__viewer{
         display: grid;
         place-items: center;

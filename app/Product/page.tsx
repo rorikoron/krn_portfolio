@@ -31,7 +31,7 @@ const Page : NextPage = () => {
             <h2>拙いながらBlenderで作った3Dモデルを載せときます...</h2>
 
 
-            <section className={`${style.content}`}>
+            <main className={`${style.content}`}>
                     
                 <div className={`${style.content__viewer}`}>
                 {(
@@ -48,7 +48,7 @@ const Page : NextPage = () => {
                         )))
                     }
                 </aside>
-            </section>
+            </main>
         </section>
     )
 }

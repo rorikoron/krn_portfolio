@@ -34,9 +34,8 @@ body {
 }
 body > section{
   height: 100dvh;
-  width: 100dvw;
-  padding-top: 28px;
-  padding-left: 260px;
+  margin-top: 28px;
+  margin-left: 260px;
   overflow: hidden;
 }
 
@@ -47,6 +46,9 @@ section > h1{
 section > h2{
   font-size: 1.8rem;
   font-family: var(--font-zenkaku-gothic-regular);
+}
+section > main{
+  padding: 6rem 4rem;
 }
 
 * {
