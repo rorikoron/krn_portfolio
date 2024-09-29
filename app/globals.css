@@ -33,10 +33,9 @@ body {
   width: 100dvw;
 }
 body > section{
-  height: 100dvh;
+  height: calc(100dvh - 28px);
   margin-top: 28px;
   margin-left: 260px;
-  overflow: hidden;
 }
 
 section > h1{

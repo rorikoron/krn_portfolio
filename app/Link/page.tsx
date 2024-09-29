@@ -10,25 +10,25 @@ const data = [
     {
         category : "SNS",
         info: [
-            { title: "VRC",logo: "VRChat", link: "https://vrchat.com/home/user/usr_21abbcba-ea81-4fb3-991c-52a2dc4b3260" },
-            { title: "Twitter(VRC)",logo: "Twitter", link: "https://x.com/rorikoron__game" },
-            { title: "Twitter(main)",logo: "Twitter", link: "https://x.com/omimi__melonzo" },
+            { title: "VRChat",logo: "vrchat", link: "https://vrchat.com/home/user/usr_21abbcba-ea81-4fb3-991c-52a2dc4b3260" },
+            { title: "Twitter(VRC)",logo: "twitter", link: "https://x.com/rorikoron__game" },
+            { title: "Twitter(main)",logo: "twitter", link: "https://x.com/omimi__melonzo" },
         ]
     },{
         category : "商品系",
         info: [
-            { title: "Booth",logo: "Booth", link: "https://rorikoron.booth.pm/" },
+            { title: "ころんの売り場",logo: "booth", link: "https://rorikoron.booth.pm/" },
         ]
     },{
         category : "干し芋",
         info: [
-            { title: "Booth", logo: "Booth", link: "https://booth.pm/wish_list_names/poPToaBg" },
-            { title: "Amazon", logo: "Amazon", link: "https://www.amazon.co.jp/hz/wishlist/ls/lol?redirect=false"}
+            { title: "Booth", logo: "booth", link: "https://booth.pm/wish_list_names/poPToaBg" },
+            { title: "Amazon", logo: "amazon", link: "https://www.amazon.co.jp/hz/wishlist/ls/lol?redirect=false"}
         ]
     },{
         category : "その他",
         info: [
-            { title: "Pixiv",logo: "Pixiv", link: "https://www.pixiv.net/users/57156713" },
+            { title: "Pixiv",logo: "pixiv", link: "https://www.pixiv.net/users/57156713" },
         ]
     },
 ]

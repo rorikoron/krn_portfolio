@@ -13,17 +13,20 @@
 }
 .content{
     display: flex;
-    flex-direction: column;
-    font-family: var(--font-zenkaku-gothic-medium);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4.8rem 3.6rem;
+    width: 80%;
 }
 
 .group{
-    padding: 0 0.2rem;
-    font-family: var(--zenkaku-gothic-light);
+    display: inline-block;
+    width: fit-content;
     &__title{
+        display: inline-block;
         font-size: 2.8rem;
         padding-bottom: 1.4rem;
-
+        font-family: var(--font-zenkaku-gothic-medium);
     }
 
     &__link{
@@ -34,6 +37,8 @@
         gap: 32px;
         padding: 0 8px;
         flex-direction: row;
+        font-family: var(--font-zenkaku-gothic-regular);
+
 
         > li{
             border: 1px solid black;
@@ -43,7 +48,7 @@
     }
 
     
-    & + .group{
-        margin-top: 4.5rem;
+    &:not(:last-child){
+        margin-right: 2.2rem;
     }
 }

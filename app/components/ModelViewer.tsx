@@ -27,7 +27,6 @@ const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} color="FFFFFF" intensity={5000} />
                 <primitive object={myModel} />
-                <primitive object={new GridHelper(20)} />
                 <OrbitControls />
             </Canvas>
             <Link className={`${style.link}`} href={`https://booth.pm/ja/items/${serial}`} rel="noopener noreferrer" target="_blank">
