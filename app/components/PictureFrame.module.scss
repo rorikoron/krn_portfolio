@@ -6,6 +6,24 @@
     border-radius: 8px;
     cursor: pointer;
 
+    &::before{
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: var(--btn-idle);
+        z-index: 1;
+        transition: all 0.2s;
+    }
+    &[data-fetched="true"]{
+        &::before{
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
     &::after{
         content: "";
         width: 100%;
@@ -29,5 +47,11 @@
     > img{
         object-fit: cover;
         transition: all 0.6s;
+        &::before{
+            z-index: 1;
+            content: attr(data-date)"";
+            background-color: #a50034;
+            font-size: 2rem;
+        }
     }
 }

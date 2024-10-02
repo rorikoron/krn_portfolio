@@ -1,3 +1,9 @@
+.warning{
+    font-size: 2rem;
+    font-family: var(--font-zenkaku-gothic-regular);
+    display: grid;
+    place-items: center;
+}
 .list{
     display: flex;
     gap: 2rem;
@@ -15,7 +21,7 @@
     }
 
     &::before{
-        background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 95%, rgba(255,255,255,1) 100%);
         left: -0rem;
     }
 

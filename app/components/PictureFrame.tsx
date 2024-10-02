@@ -9,9 +9,12 @@ export interface PictureProps {
 
 const PictureFrame: React.FC<PictureProps> = ({ fileName, path }) => {
     const [ratio, setRatio] = useState(16/9) // default to 16:9
+    const [hasFetched, setHasFetched] = useState<boolean>(false);
+    const date = fileName.split('_')[1].replaceAll('-', '/');
     return(
-    <figure className={`${style.figure}`} style={{aspectRatio: ratio}}>
-        <Image src={path} alt={fileName} fill={true} onLoadingComplete={({ naturalWidth, naturalHeight }) => setRatio(naturalWidth / naturalHeight)
+    <figure className={`${style.figure}`} style={{aspectRatio: ratio}} data-fetched={hasFetched}>
+        <Image src={path} alt={fileName} fill={true} data-date={date} onLoadingComplete={
+            ({ naturalWidth, naturalHeight }) => {setRatio(naturalWidth / naturalHeight); setHasFetched(true);}
       }/>
     </figure>
 )};

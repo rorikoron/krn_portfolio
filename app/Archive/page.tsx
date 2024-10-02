@@ -54,12 +54,10 @@ const Page: NextPage = () => {
             <h2>みんなとのおもいで</h2>
 
             <main className={`${style.content}`}>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <div ref={scrollContainerRef} className={`${style.wrapper}`} >
-                        <PictureList blobs={blobs.slice(0, blobs.length/2)} />
-                        <PictureList blobs={blobs.slice(blobs.length/2)} />
-                    </div>
-                </Suspense>
+                <div ref={scrollContainerRef} className={`${style.wrapper}`} >
+                    <PictureList blobs={blobs.slice(0, blobs.length/2)} />
+                    <PictureList blobs={blobs.slice(blobs.length/2)} />
+                </div>
             </main>
         </section>
     );
