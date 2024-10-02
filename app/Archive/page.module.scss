@@ -1,0 +1,19 @@
+.content{
+    padding: 6rem 0rem;
+
+    .wrapper{
+        height: 100%;
+        width: calc(100dvw - 4rem - 260px);
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        position: relative;
+        white-space: nowrap;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+    }
+}

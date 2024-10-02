@@ -36,6 +36,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [blobs, setBlobs] = [, []]
   return (
     <html lang="en">
       <body className={`${robotoMono.variable} ${zenkakuGothicLight.variable} ${zenkakuGothicMedium.variable} ${zenkakuGothicRegular.variable}`}>

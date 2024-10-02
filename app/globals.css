@@ -4,6 +4,8 @@
 
   --btn-idle: rgb(242, 242, 242);
   --btn-hover: rgb(216, 216, 216);
+  --color-gray-tint: rgb(152, 152, 152);
+  --color-gray-tone: rgb(99, 99, 99, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +38,9 @@ body > section{
   height: calc(100dvh - 28px);
   margin-top: 28px;
   margin-left: 260px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
 }
 
 section > h1{
@@ -45,9 +50,6 @@ section > h1{
 section > h2{
   font-size: 1.8rem;
   font-family: var(--font-zenkaku-gothic-regular);
-}
-section > main{
-  padding: 6rem 4rem;
 }
 
 * {
