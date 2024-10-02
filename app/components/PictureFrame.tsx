@@ -1,7 +1,6 @@
 import style from "./PictureFrame.module.scss";
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { cos } from "three/webgpu";
 
 export interface PictureProps {
     fileName: string;
