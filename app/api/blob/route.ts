@@ -4,7 +4,7 @@ export async function GET() {
     const files = glob.sync("./public/archive/*.png");
     const fileInfo = files.map((file:string) => {
         const name = file.substring(file.lastIndexOf('/')+1);
-        const path = name.substring(name.indexOf('/')+1);
+        const path = file.substring(file.indexOf('/'));
         return({
             fileName: name,
             path: path
