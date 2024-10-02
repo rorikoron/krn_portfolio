@@ -1,4 +1,3 @@
-import { calculateAspectRatio } from "@react-three/drei";
 import style from "./PictureFrame.module.scss";
 import Image from 'next/image';
 import React, { useState } from 'react';

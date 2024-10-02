@@ -4,7 +4,6 @@ import style from './page.module.scss';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import PictureList from '../components/PictureList';
 import { PictureProps } from '../components/PictureFrame';
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 
 const Page: NextPage = () => {

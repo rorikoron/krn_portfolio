@@ -1,8 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+import { glob } from "glob"
+export async function GET() {
   try {
-    const glob = require('glob');
     const files = glob.sync("./public/archive/*.png");
     const fileInfo = files.map((file:string) => {
         const name_full = file.split("\\").pop();
@@ -13,7 +11,8 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
         })
     })
     return Response.json(fileInfo);
-  } catch (error : any) {
+  } catch (error : unknown) {
+    console.error(error);
     return Response.error();
   }
 }
