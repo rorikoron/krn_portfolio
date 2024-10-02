@@ -13,7 +13,6 @@ const PictureFrame: React.FC<PictureProps> = ({ fileName, path }) => {
     <figure className={`${style.figure}`} style={{aspectRatio: ratio}}>
         <Image src={path} alt={fileName} fill={true} onLoadingComplete={({ naturalWidth, naturalHeight }) => setRatio(naturalWidth / naturalHeight)
       }/>
-        <span>{path}</span>
     </figure>
 )};
 
