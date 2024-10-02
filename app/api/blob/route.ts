@@ -3,11 +3,11 @@ export async function GET() {
   try {
     const files = glob.sync("./public/archive/*.png");
     const fileInfo = files.map((file:string) => {
-        const name_full = file.substring(file.lastIndexOf('/')+1);
-        //const name_extract = name_full?.substring(0, name_full.lastIndexOf('.'));
+        const name = file.substring(file.lastIndexOf('/')+1);
+        const path = name.substring(name.indexOf('/')+1);
         return({
-            fileName: file,
-            path: `${name_full}`
+            fileName: name,
+            path: path
         })
     })
     return Response.json(fileInfo);
