@@ -13,9 +13,10 @@ const PictureFrame: React.FC<PictureProps> = ({ fileName, path }) => {
     const date = fileName.split('_')[1].replaceAll('-', '/');
     return(
     <figure className={`${style.figure}`} style={{aspectRatio: ratio}} data-fetched={hasFetched}>
-        <Image src={path} alt={fileName} fill={true} data-date={date} onLoadingComplete={
+        <Image src={path} alt={fileName} fill={true} onLoadingComplete={
             ({ naturalWidth, naturalHeight }) => {setRatio(naturalWidth / naturalHeight); setHasFetched(true);}
-      }/>
+        }/>
+        <figcaption className={`${style.legend}`} >{date}</figcaption>
     </figure>
 )};
 

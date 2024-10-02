@@ -1,12 +1,5 @@
-import { useState } from "react";
 import PictureFrame, { PictureProps } from "./PictureFrame";
 import style from "./PictureList.module.scss"
-
-const NotFoundWarning : React.FC = () =>{
-    return(
-        <div className={`${style.warning}`}></div>
-    )
-}
 
 const PictureList: React.FC<{ blobs: PictureProps[] }> = ({ blobs }) => {
 

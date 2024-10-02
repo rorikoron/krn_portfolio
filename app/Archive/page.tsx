@@ -1,7 +1,7 @@
 "use client"
 import { NextPage } from 'next';
 import style from './page.module.scss';
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PictureList from '../components/PictureList';
 import { PictureProps } from '../components/PictureFrame';
 
