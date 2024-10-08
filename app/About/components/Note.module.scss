@@ -1,0 +1,74 @@
+
+.note{
+    --font-size: 2.2rem;
+    --padding-horizontal-parent: 4rem;
+    --padding-vertical-parent: 4rem;
+
+    --padding-horizontal-child: 4rem;
+    --padding-vertical-child: 2rem;
+    
+    --margin-vertical-slide: 2.6rem;
+    --margin-horizontal-slide: 3rem;
+    
+
+    background: var(--color-blue-tint);
+    border-radius: var(--border-radius);
+    padding: var(--padding-vertical-parent) var(--padding-horizontal-parent);
+    
+    &::before{
+        content: "Add a note about this user";
+        color: var(--color-emphasize);
+        font-size: var(--font-size);
+        font-family: var(--font-zenkaku-gothic-bold);
+        
+        
+        position: absolute;
+        top: calc(var(--padding-vertical-parent) / 2);
+        left: calc(var(--padding-horizontal-parent) / 2);
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        height: var(--font-size);
+        aspect-ratio: 1/1;
+
+        mask-image: url("/images/pencil-solid.svg");
+        mask-repeat:    no-repeat;
+        mask-position:  center center;
+        background-color: var(--color-white);
+
+        position: absolute;
+        left: calc(var(--margin-horizontal-slide) + var(--padding-horizontal-parent) + var(--padding-horizontal-child) / 2);
+        top: calc(var(--margin-vertical-slide) + var(--padding-vertical-parent) + var(--padding-vertical-child) / 2 + var(--font-size));
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    &__textarea{
+        width: 100%;
+        height: 100%;
+        padding: var(--padding-vertical-child) var(--padding-horizontal-child);
+        color: var(--color-blue-vivid);
+        resize: none;
+        white-space: pre-wrap;
+        transform: translate(var(--margin-horizontal-slide), var(--margin-vertical-slide));
+
+        background: var(--color-blue-tone);
+        border-radius: var(--border-radius);
+        font-size: var(--font-size);
+        font-family: var(--font-zenkaku-gothic-regular);
+
+        position: relative;
+        line-height: 1.8;
+
+        &:focus{
+            outline: none;
+        }
+        
+
+       
+    }
+
+
+}

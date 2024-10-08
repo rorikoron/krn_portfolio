@@ -4,8 +4,20 @@
 
   --btn-idle: rgb(242, 242, 242);
   --btn-hover: rgb(216, 216, 216);
+
+  --color-main: 	rgb(232, 204, 205);
+  --color-main-tone: rgba(168, 85, 85, 0.8);
+  --color-white: rgb(228, 228, 228);
+  --color-emphasize: #fbfbfb;
   --color-gray-tint: rgb(152, 152, 152);
   --color-gray-tone: rgb(99, 99, 99, 0.7);
+
+  --color-blue-vivid: rgb(173, 203, 255);
+  --color-blue-tint: rgb(188, 186, 196);
+  --color-blue-tone: rgb(59, 58, 65);
+
+  --padding-vertical-content: 6rem;
+  --padding-horizontal-content: 4rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,11 +55,11 @@ body > section{
   grid-template-rows: max-content max-content 1fr;
 }
 
-section > h1{
+section h1{
   font-family: var(--font-zenkaku-gothic-medium);
   font-size: 4.6rem;
 }
-section > h2{
+section h2{
   font-size: 1.8rem;
   font-family: var(--font-zenkaku-gothic-regular);
 }

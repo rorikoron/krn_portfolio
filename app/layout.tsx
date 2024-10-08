@@ -24,6 +24,11 @@ const zenkakuGothicRegular = localFont({
   variable: "--font-zenkaku-gothic-regular",
   weight: "100 900",
 })
+const zenkakuGothicBold = localFont({
+  src: "./fonts/ZenKakuGothicAntique-Bold.ttf",
+  variable: "--font-zenkaku-gothic-bold",
+  weight: "100 900"
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoMono.variable} ${zenkakuGothicLight.variable} ${zenkakuGothicMedium.variable} ${zenkakuGothicRegular.variable} `}>
+      <body className={`${robotoMono.variable} ${zenkakuGothicLight.variable} ${zenkakuGothicMedium.variable} ${zenkakuGothicRegular.variable} ${zenkakuGothicBold.variable}`}>
         <Header />
         {children}
       </body>

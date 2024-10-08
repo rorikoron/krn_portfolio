@@ -1,0 +1,75 @@
+.content{
+    
+    --border-width: 4px;
+    --border-radius: 6px;
+    --gap-content: 4rem;
+
+    padding-top: var(--padding-vertical-content);
+    padding-left: var(--padding-horizontal-content);
+    padding-right: var(--padding-horizontal-content);
+
+
+    position: relative;
+    display: grid;
+    gap: var(--gap-content);
+    grid-template-columns: 1fr 3fr;
+
+    .info{
+        --margin-vertical-slide: 4.6rem;
+
+        margin-top: var(--margin-vertical-slide);
+        padding: 0 32px 0 14px;
+        border-radius: var(--border-radius) var(--border-radius) 0 0 ;
+        background: var(--color-blue-tint);
+
+        display: grid;
+        grid-template-rows: max-content 1fr;
+
+        .appendix{
+            --elem-radius: 18px;
+
+            &__list{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                color: var(--color-white);
+                font-family: var(--font-zenkaku-gothic-bold);
+                font-size: 1.2rem;
+
+                &::before{
+                    content: "I Speak";
+                    color: var(--color-emphasize);
+                    font-size: 1.6rem;
+                }
+                > li{
+                    display: grid;
+                    place-items: center;
+                    height: 2.6rem;
+                    background: var(--color-blue-tone);
+                    width: fit-content;
+                    padding: 0rem 1.2rem;
+                    border-radius: var(--elem-radius);
+                }
+            }
+        }
+    }
+    .introduction{
+        --margin-vertical-slide: -12rem;
+
+        position: relative;
+        display: grid;
+        grid-template-rows: 36rem 1fr;
+        gap: var(--gap-content);
+        color: var(--color-white);
+        font-family: var(--font-zenkaku-gothic-medium);
+        transform: translateY(var(--margin-vertical-slide));
+
+        &__content{
+            background: var(--color-blue-tint);
+            border-radius: var(--border-radius);
+            padding: 4rem 4rem;
+        }
+    }
+}

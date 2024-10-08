@@ -59,6 +59,11 @@ const Page: NextPage = () => {
                     <PictureList blobs={blobs.slice(blobs.length/2)} />
                 </div>
             </main>
+
+            <div className={`${style.modal}`}>
+
+                
+            </div>
         </section>
     );
 };
