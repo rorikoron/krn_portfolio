@@ -10,7 +10,7 @@ const Card : React.FC<CardProps> = ({src, alt}) =>{
     return(
         <figure className={`${style.avatar}`}>
             <div className={`${style.avatar__icon}`}>
-                <Image src='/images/icon.png' fill={true} alt="アイコン画像" />
+                <Image src={src} fill={true} alt={alt} />
             </div>
             <figcaption className={`${style.avatar__caption}`}>
                 <span className={`${style.caption__name}`}>Rorikoron</span>
