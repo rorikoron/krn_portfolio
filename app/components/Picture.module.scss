@@ -2,13 +2,13 @@
     position: relative;
     height: 100%;
     width: 100%;
+    overflow: hidden;
     &::before{
         content: "";
         height: 100%;
         width: 100%;
 
         background: var(--btn-idle);
-
         position: absolute;
         left: 0;
         top: 0;
@@ -20,16 +20,10 @@
         transition: all 0.2s;
     }
 
-    &[data-fetched="true"] {
-
-
-        &[data-skeleton="true"]::before{
+    &[data-fetched="true"][data-skeleton="true"]{
+        &::before{
             opacity: 0;
             visibility: hidden;   
-        }
-        
-        &[data-move="true"]{
-            left: -50%;
         }
     }
 
