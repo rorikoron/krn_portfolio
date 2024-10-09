@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import style from './page.module.scss'
 import Note from './components/Note'
 import Card from '../components/Card'
+import { PictureProps } from '../components/Picture';
 
 const Page : NextPage = () => {
 
@@ -10,9 +11,10 @@ const Page : NextPage = () => {
 普段はフレプラでごろごろしているか、ToNなどのゲームワールドに出現するらしい。
 主にまふゆちゃんや自作のななしちゃんを使っているらしい。
 `;
-    const avatarProps = {
+    const props : PictureProps = {
         src: "/images/icon.png",
         alt: "アイコン画像",
+        skeleton: true,
     }
     
     return(
@@ -23,7 +25,7 @@ const Page : NextPage = () => {
             <main className={`${style.content}`}>
 
                 <section className={`${style.info}`}>
-                    <Card {...avatarProps}/>
+                    <Card {...props}/>
                     <aside className={`${style.appendix}`}>
                         <ul className={`${style.appendix__list}`}>
                             <li>日本語</li>

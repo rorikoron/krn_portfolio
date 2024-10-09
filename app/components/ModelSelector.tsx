@@ -1,6 +1,7 @@
 import style from "./ModelSelector.module.scss"
 import Image from 'next/image'
 import ImageButton from "./ImageButton"
+import Picture, { PictureProps } from "./Picture"
 
 export interface ItemKeys{
     serial?: string,
@@ -14,8 +15,16 @@ export interface ItemValues{
     onClickEvent: (object : ItemKeys) => void,
 }
 
+
 const ModelSelector: React.FC<ItemValues> = ({label, fileName, time, serial, onClickEvent}) => {
-    const Thumbnail : React.FC = () => (<Image src={"/images/" + fileName + ".png"} fill={true} alt={`${label}のBoothサムネイル画像`}/>)
+
+    
+    const props : PictureProps ={
+        src: `/images/${fileName}.png`,
+        alt: `${label}のBoothサムネイル画像`,
+        skeleton: true,
+    }
+
     const Caption : React.FC = () => {
         return(
             <>
@@ -27,7 +36,7 @@ const ModelSelector: React.FC<ItemValues> = ({label, fileName, time, serial, onC
 
     return(
         <div onClick={ () => onClickEvent({serial, fileName}) }>
-            <ImageButton key={fileName} Caption={<Caption />} Thumbnail={<Thumbnail />} />
+            <ImageButton key={fileName} Caption={<Caption />} Thumbnail={<Picture {...props} />} />
         </div>
     )
 }

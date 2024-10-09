@@ -11,10 +11,6 @@
     &__icon{
         position: relative;
 
-        > img{
-            object-fit: cover;
-        }
-
         &::after{
             content: "";
             width: 100%;
