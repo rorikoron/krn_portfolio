@@ -1,7 +1,6 @@
 import style from "./ModelSelector.module.scss"
-import Image from 'next/image'
-import ImageButton from "./ImageButton"
-import Picture, { PictureProps } from "./Picture"
+import ImageButton from "../../components/ImageButton"
+import Picture, { PictureProps } from "../../components/Picture"
 
 export interface ItemKeys{
     serial?: string,

@@ -5,7 +5,7 @@ import { ItemKeys } from './ModelSelector';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextPage } from 'next';
-import ImageButton from './ImageButton';
+import ImageButton from '../../components/ImageButton';
 
 const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
     const myModel = useFBX(`/models/${fileName}.fbx`);

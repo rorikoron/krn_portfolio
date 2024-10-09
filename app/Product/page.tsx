@@ -1,6 +1,6 @@
 "use client"
-import ModelViewer from "../components/ModelViewer"
-import ModelSelector, { ItemKeys }from '../components/ModelSelector'
+import ModelViewer from "./components/ModelViewer"
+import ModelSelector, { ItemKeys }from './components/ModelSelector'
 import style from "./page.module.scss"
 import { useState } from 'react'
 import { NextPage } from "next"
