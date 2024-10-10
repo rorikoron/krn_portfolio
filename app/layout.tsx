@@ -33,7 +33,28 @@ const zenkakuGothicBold = localFont({
 
 export const metadata: Metadata = {
   title: "krn",
-  description: "ろりころんの自己紹介サイト",
+  description: "ろりころんのサイトです！",
+  openGraph: {
+      type: 'website',
+      title: 'krn',
+      description: 'ろりころんのサイトです！',
+      siteName: 'krn-portfolio',
+      url: 'https://krn-portfolio.vercel.app/',
+      locale: 'ja_JP',
+      images: [
+          {
+              url: './images/steakholder.png',
+              width: 1200,
+              height: 630,
+              alt: 'png for OGP'
+          }
+      ],
+    },
+    
+    twitter: {
+      card: 'summary_large_image',
+      site: 'website',
+  }
 };
 
 export default function RootLayout({

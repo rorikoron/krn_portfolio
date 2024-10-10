@@ -7,11 +7,29 @@
 
     border-radius: 4px;
 
+    position: relative;
     cursor: pointer;
-    transition: background-color 0.3s;
+    &::after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        mix-blend-mode: multiply;
+        background: transparent;
+        transition: all 0.3s;
+    }
 
     &:hover{
-        background-color: var(--btn-hover);
+        &::after{
+            visibility: visible;
+            opacity: 1;
+            background-color: var(--btn-hover);
+            
+        }
     }
 }
 

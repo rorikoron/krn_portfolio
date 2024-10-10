@@ -51,9 +51,11 @@ const Page : NextPage = () => {
                                     const Thumbnail : React.FC = () => {return(<Image src={src} fill={true} alt={`${title}のロゴ画像`} />)};
                                     const Caption : React.FC = () => (<span>{title}</span>);
                                     return(
-                                        <Link key={title} href={link} rel="noopener noreferrer" target="_blank">
-                                            <ImageButton key={title} Thumbnail={<Thumbnail />} Caption={<Caption />}/>
-                                        </Link>
+                                        <li  key={title}>
+                                            <Link href={link} rel="noopener noreferrer" target="_blank">
+                                                <ImageButton key={title} Thumbnail={<Thumbnail />} Caption={<Caption />}/>
+                                            </Link>
+                                        </li>
                                     )
                                 })}
                             </ul>

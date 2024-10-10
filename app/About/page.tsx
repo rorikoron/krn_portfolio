@@ -1,7 +1,10 @@
 import { NextPage } from 'next'
+import Image from 'next/image'
 import style from './page.module.scss'
 import Note from './components/Note'
 import Card, { CardProps } from '../components/Card'
+import ImageButton from '../components/ImageButton'
+import Link from 'next/link'
 
 const Page : NextPage = () => {
 
@@ -10,20 +13,23 @@ const Page : NextPage = () => {
 普段はフレプラでごろごろしているか、ToNなどのゲームワールドに出現するらしい。
 主にまふゆちゃんや自作のななしちゃんを使っているらしい。`;
 
-    const Caption : React.FC = () => {
-        return(
-            <>
-                <span className={`${style.caption__name}`}>Rorikoron</span>
-                <span className={`${style.caption__status}`}>🔴Online</span>
-            </>
-        )
-    }
-    const props : CardProps = {
+    const cardProps : CardProps = {
         src: "/images/icon.png",
         alt: "アイコン画像",
         skeleton: true,
-        Caption: <Caption />,
+        Caption: 
+        <>
+            <span className={`${style.caption__name}`}>Rorikoron</span>
+            <span className={`${style.caption__status}`}>🔴Online</span>
+        </>,
     }
+
+    const imageButtonProps = {
+        Thumbnail: <span className={`${style.imageButton__thumbnail}`} />,
+        Caption: <span className={`${style.imageButton__caption}`}>Share</span>
+
+    }
+ 
     
     return(
         <section>
@@ -33,7 +39,7 @@ const Page : NextPage = () => {
             <main className={`${style.content}`}>
 
                 <section className={`${style.info}`}>
-                    <Card {...props}/>
+                    <Card {...cardProps}/>
                     <aside className={`${style.appendix}`}>
                         <ul className={`${style.appendix__list}`}>
                             <li>日本語</li>
@@ -51,6 +57,14 @@ const Page : NextPage = () => {
                         <p>ギミックなし</p>
                         <p>お砂糖なし</p>
                         <p>ろりころん生きていけないよおおお</p>
+
+                        <nav className={`${style.navButtons}`}>
+                            <li className={`${style.button}`}>
+                                <Link  rel="noopener noreferrer" target="_blank" href={"http://twitter.com/share?url=https://krn-portfolio.vercel.app/&text=ろりころんさんのサイトをシェアします！！！&via=rorikoron"}>
+                                    <ImageButton {...imageButtonProps} />
+                                </Link>
+                            </li>
+                        </nav>
                     </div>
 
                 </section>

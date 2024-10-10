@@ -71,7 +71,37 @@
             border-radius: var(--border-radius);
             padding: 4rem 4rem;
         }
+
+
+        
+        .navButtons{
+            >.button{
+            width: fit-content;
+            height: 4rem;
+            list-style: none;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            fill: var(--color-blue-vivid);
+
+            }
+            figcaption{
+                justify-content: flex-end;
+            }
+            *{
+                background: var(--color-blue);
+                color: var(--color-blue-vivid) !important;
+
+            }
+
+
+            &:first-child{
+                padding: 0 0.6rem;
+            }
+        }
     }
+
+
+    
 }
 
 .caption{
@@ -81,5 +111,22 @@
     &__status{
         font-size: 1.4rem;
         padding: 0.4rem 0;
+    }
+}
+
+.imageButton{
+    &__thumbnail{
+        mask-image: url("/images/share-from-square-solid.svg");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-blue-vivid) !important;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__caption{
+        font-family: var(--font-zenkaku-gothic-bold);
     }
 }
