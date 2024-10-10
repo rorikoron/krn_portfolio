@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from 'next/image';
 import style from './Picture.module.scss'
 
-export type PictureProps = {
+export interface PictureProps {
     src : string,
     alt : string,
     skeleton: boolean,

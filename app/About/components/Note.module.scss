@@ -48,6 +48,7 @@
     &__textarea{
         width: 100%;
         height: 100%;
+        display: block;
         padding: var(--padding-vertical-child) var(--padding-horizontal-child);
         color: var(--color-blue-vivid);
         resize: none;
@@ -62,10 +63,28 @@
         position: relative;
         line-height: 1.8;
 
-        &:focus{
-            outline: none;
-        }
         
+        &::after{
+            content: "";
+            height: var(--font-size);
+            width: 2px;
+            display: inline-block;
+            margin-left: calc(var(--font-size) / 2 - 1px);
+            background: var(--color-blue-vivid);
+            animation: 2s infinite 1s blinker ;
+        }
+
+        @keyframes blinker {
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
 
        
     }

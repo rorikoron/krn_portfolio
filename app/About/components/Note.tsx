@@ -7,12 +7,18 @@ type TextAreaProps = {
 }
 const TextArea = ({defaultText} : TextAreaProps) => {
 
-    const [val, setVal] = useState(defaultText); 
+    const [val, setVal] = useState<string>(""); 
+    const wait = 40;
+    setTimeout(() => {
+        if(val.length != defaultText.length){
+            setVal(defaultText.substring(0, val.length+1));
+        }
+    }, wait);
 
     return(
         
         <div className={`${style.note}`}>
-            <textarea className={`${style.note__textarea}`} value={val} onChange={(e) => setVal(e.target.value)}></textarea>
+            <span className={`${style.note__textarea}`} >{val}</span>
         </div>
     )
 }

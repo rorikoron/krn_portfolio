@@ -1,14 +1,18 @@
+import { ReactElement } from 'react';
 import style from './Card.module.scss'
 import Picture from './Picture';
 import { PictureProps } from './Picture';
 
-const Card : React.FC<PictureProps> = (avatarProps) =>{
+export interface CardProps extends PictureProps{
+    Caption : ReactElement
+}
+const Card : React.FC<CardProps> = (avatarProps) =>{
+    const { Caption } = avatarProps;
     return(
         <figure className={`${style.avatar}`}>
             <Picture {...avatarProps} className={style.avatar__icon} />
             <figcaption className={`${style.avatar__caption}`}>
-                <span className={`${style.caption__name}`}>Rorikoron</span>
-                <span className={`${style.caption__status}`}>🔴Online</span>
+                {Caption}
             </figcaption>
         </figure>
     )

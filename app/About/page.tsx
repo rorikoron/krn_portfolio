@@ -1,20 +1,28 @@
 import { NextPage } from 'next'
 import style from './page.module.scss'
 import Note from './components/Note'
-import Card from '../components/Card'
-import { PictureProps } from '../components/Picture';
+import Card, { CardProps } from '../components/Card'
 
 const Page : NextPage = () => {
 
     const defaultText : string = `ろりころん
 2023年の11月からVRChatをしている。
 普段はフレプラでごろごろしているか、ToNなどのゲームワールドに出現するらしい。
-主にまふゆちゃんや自作のななしちゃんを使っているらしい。
-`;
-    const props : PictureProps = {
+主にまふゆちゃんや自作のななしちゃんを使っているらしい。`;
+
+    const Caption : React.FC = () => {
+        return(
+            <>
+                <span className={`${style.caption__name}`}>Rorikoron</span>
+                <span className={`${style.caption__status}`}>🔴Online</span>
+            </>
+        )
+    }
+    const props : CardProps = {
         src: "/images/icon.png",
         alt: "アイコン画像",
         skeleton: true,
+        Caption: <Caption />,
     }
     
     return(
