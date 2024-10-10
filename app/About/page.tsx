@@ -1,5 +1,4 @@
 import { NextPage } from 'next'
-import Image from 'next/image'
 import style from './page.module.scss'
 import Note from './components/Note'
 import Card, { CardProps } from '../components/Card'
