@@ -59,7 +59,7 @@ const Page : NextPage = () => {
 
                         <nav className={`${style.navButtons}`}>
                             <li className={`${style.button}`}>
-                                <Link  rel="noopener noreferrer" target="_blank" href={"http://twitter.com/share?url=https://krn-portfolio.vercel.app/&text=ろりころんさんのサイトをシェアします！！！&via=rorikoron"}>
+                                <Link  rel="noopener noreferrer" target="_blank" href={"http://twitter.com/share?url=https://krn-portfolio.vercel.app/&text=ろりころんさんのサイトです！！！&via=rorikoron"}>
                                     <ImageButton {...imageButtonProps} />
                                 </Link>
                             </li>
