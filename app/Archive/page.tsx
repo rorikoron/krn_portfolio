@@ -55,8 +55,8 @@ const Page: NextPage = () => {
 
             <main className={`${style.content}`}>
                 <div ref={scrollContainerRef} className={`${style.wrapper}`} >
-                    <PictureList blobs={blobs.slice(0, blobs.length/2)} />
-                    <PictureList blobs={blobs.slice(blobs.length/2)} />
+                    <PictureList blobs={blobs.filter((_, idx) => idx % 2 === 0) } />
+                    <PictureList blobs={blobs.filter((_, idx) => idx % 2 === 1) } />
                 </div>
             </main>
 
