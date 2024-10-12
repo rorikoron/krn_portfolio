@@ -10,6 +10,9 @@
     flex-direction: row;
     width: fit-content;
     position: relative;
+    > *{
+        flex-shrink: 0;
+    }
     
     &::before, &::after{
         content: "";
@@ -21,12 +24,12 @@
     }
 
     &::before{
-        background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 95%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(-90deg, rgba(var(--gradient-background),0) 0%, rgba(var(--gradient-background),0.5) 95%, rgba(var(--gradient-background),1) 100%);
         left: -0rem;
     }
 
     &::after{
-        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 95%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(90deg, rgba(var(--gradient-background),0) 0%, rgba(var(--gradient-background),0.5) 95%, rgba(var(--gradient-background),1) 100%);
         right: -0rem;
     }
 }

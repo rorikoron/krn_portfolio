@@ -36,7 +36,7 @@
         mask-image: url("/images/pencil-solid.svg");
         mask-repeat:    no-repeat;
         mask-position:  center center;
-        background-color: var(--color-white);
+        background-color: var(--color-base);
 
         position: absolute;
         left: calc(var(--margin-horizontal-slide) + var(--padding-horizontal-parent) + var(--padding-horizontal-child) / 2);

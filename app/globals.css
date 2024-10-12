@@ -2,19 +2,21 @@
   --background: #ffffff;
   --foreground: #171717;
 
+  --gradient-background: 255, 255, 255;
+
   --btn-idle: rgb(242, 242, 242);
   --btn-hover: rgb(216, 216, 216);
 
   --color-main: 	rgb(232, 204, 205);
   --color-main-tone: rgba(168, 85, 85, 0.8);
-  --color-white: rgb(228, 228, 228);
+  --color-base: rgb(228, 228, 228);
   --color-emphasize: #fbfbfb;
   --color-gray-tint: rgb(152, 152, 152);
   --color-gray-tone: rgb(99, 99, 99, 0.7);
 
   --color-blue-vivid: rgb(196, 233, 255);
   --color-blue: rgb(110, 147, 182);
-  --color-blue-tint: rgb(198, 196, 206);
+  --color-blue-tint: rgb(212, 211, 216);
   --color-blue-tone: rgb(59, 58, 65);
 
   --padding-vertical-content: 6rem;
@@ -25,6 +27,14 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --gradient-background: 10, 10, 10;
+
+    --btn-idle: rgb(47, 47, 53);
+    --color-blue-tint: rgb(52, 51, 53);
+     
+
+    --color-base: rgb(206, 206, 206);
   }
 }
 

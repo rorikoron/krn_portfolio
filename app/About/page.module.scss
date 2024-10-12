@@ -34,7 +34,7 @@
                 flex-direction: column;
                 gap: 4px;
 
-                color: var(--color-white);
+                color: var(--color-base);
                 font-family: var(--font-zenkaku-gothic-bold);
                 font-size: 1.2rem;
 
@@ -62,7 +62,7 @@
         display: grid;
         grid-template-rows: 36rem 1fr;
         gap: var(--gap-content);
-        color: var(--color-white);
+        color: var(--color-base);
         font-family: var(--font-zenkaku-gothic-medium);
         transform: translateY(var(--margin-vertical-slide));
 

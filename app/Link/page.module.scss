@@ -49,6 +49,13 @@
         flex-direction: row;
         font-family: var(--font-zenkaku-gothic-regular);
 
+        >li{
+            height: 100%;
+        }
+        a {
+            display: block;
+            height: 100%;
+        }
 
     }
 
