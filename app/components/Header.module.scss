@@ -1,9 +1,8 @@
 .header{
-    width: 260px;
+    width: var(--header-width);
     height: 100vh;
     position: fixed;
 }
-
 
 .list{
     padding: 5.2rem 4.6rem;
@@ -48,5 +47,11 @@
 
     > a{
         display: block;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .header{
+        left: calc(-1 * var(--header-width));
     }
 }

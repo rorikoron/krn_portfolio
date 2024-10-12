@@ -10,7 +10,7 @@
     --margin-vertical-slide: 2.6rem;
     --margin-horizontal-slide: 3rem;
     
-
+    overflow: hidden;
     background: var(--color-blue-tint);
     border-radius: var(--border-radius);
     padding: var(--padding-vertical-parent) var(--padding-horizontal-parent);
@@ -54,7 +54,7 @@
         resize: none;
         white-space: pre-wrap;
         transform: translate(var(--margin-horizontal-slide), var(--margin-vertical-slide));
-
+        overflow-y: scroll;
         background: var(--color-blue-tone);
         border-radius: var(--border-radius);
         font-size: var(--font-size);
@@ -90,4 +90,52 @@
     }
 
 
+}
+
+@media screen and (max-width: 960px){
+    .note{
+        --padding-horizontal-parent: 2rem;
+        --padding-vertical-parent: 5.2rem;
+
+        --margin-horizontal-slide: 1rem;
+        --margin-vertical-slide: 4rem;
+    }
+}
+
+@media screen and (min-height: 800px){
+    .note{
+        transform: translateX(calc(-1 *  var(--header-width) - var(--padding-horizontal-content) - var(--padding-header-disable)));
+    }
+}
+
+@media screen and (max-width: 460px) and (min-height: 800px){
+    .note{
+
+        --font-size: 2.4rem;
+        --padding-horizontal-parent: 2rem;
+
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        transform: translateX(calc(-1 * var(--padding-horizontal-content) - var(--padding-header-disable)));
+        width: 86dvw;
+
+    }
+    
+}
+
+@media screen and (max-width: 420px) and (max-height: 800px){
+    .note{
+
+        --font-size: 1.6rem;
+        --padding-vertical-parent: 2.5rem;
+        --padding-horizontal-parent: 2rem;
+        --padding-vertical-child: 1rem;
+        --margin-vertical-slide: 2rem;
+        --margin-horizontal-slide: 1rem;
+
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        transform: translateX(calc(-1 * var(--padding-horizontal-content) - var(--padding-header-disable)));
+        width: 86dvw;
+
+    }
+    
 }
