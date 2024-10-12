@@ -1,11 +1,11 @@
 .content{
-    padding: 6rem 0rem;
+    padding: var(--padding-vertical-content) var(--padding-horizontal-content);
 
     .wrapper{
         height: 100%;
-        width: calc(100dvw - 4rem - 260px);
-        display: grid;
-        grid-template-rows: 1fr 1fr;
+        width: calc(100dvw - var(--padding-horizontal-content) - var(--header-width));
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
         overflow-x: scroll;
         overflow-y: hidden;
@@ -15,5 +15,25 @@
             display: none;
         }
 
+        > *{
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+    }
+}
+
+@media screen and (max-width: 680px){
+    .content{
+        .wrapper{
+            width: calc(100dvw - 4rem);
+        }
+    }
+}
+
+
+@media screen and (min-height: 800px){
+    .content{
+        padding: 4rem 1.2rem;
     }
 }

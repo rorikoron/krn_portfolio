@@ -17,7 +17,7 @@
     &::before, &::after{
         content: "";
         height: 100%;
-        width: 4rem;
+        width: var(--padding-horizontal-content);
         position: sticky;
         top: 0;
         z-index: 1;

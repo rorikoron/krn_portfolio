@@ -4,11 +4,21 @@ import style from './page.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import PictureList from '../components/PictureList';
 import { PictureProps } from '../components/PictureFrame';
+import { list } from '@vercel/blob';
 
 
 const Page: NextPage = () => {
     const [blobs, setBlobs] = useState<PictureProps[]>([]); 
+    const [listNum, setListNum] = useState<number>(2);
 
+    const changeListNum = () =>{
+        const height = window.innerHeight;
+        const width = window.innerWidth;
+
+        if(height > 800) setListNum(4);
+        else if (height > 700 || width < 460) setListNum(3);
+        else setListNum(2);
+    }
     const fetchBlobs = async () => {
         try {
             const response = await fetch("/api/blob");
@@ -25,7 +35,14 @@ const Page: NextPage = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // fetch window size and set data attribute
+        changeListNum();
+        window.addEventListener("resize", changeListNum);
+
+        // fetching image datas
         fetchBlobs();
+
+        // scroll setting
         const handleWheel = (e: WheelEvent) => {
             if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
             e.preventDefault();
@@ -42,11 +59,13 @@ const Page: NextPage = () => {
         }
 
         return () => {
+            window.removeEventListener("resize", changeListNum);
             if (container) {
                 container.removeEventListener("wheel", handleWheel);
             }
         };
     }, []);
+
         
     return (
         <section>
@@ -54,9 +73,16 @@ const Page: NextPage = () => {
             <h2>みんなとのおもいで</h2>
 
             <main className={`${style.content}`}>
-                <div ref={scrollContainerRef} className={`${style.wrapper}`} >
-                    <PictureList blobs={blobs.filter((_, idx) => idx % 2 === 0) } />
-                    <PictureList blobs={blobs.filter((_, idx) => idx % 2 === 1) } />
+                <div ref={scrollContainerRef} className={`${style.wrapper}`} data-listNum={listNum} >
+
+                {
+                    [...Array(listNum)].map((_, num) => (
+                        <PictureList blobs={blobs.filter((_, idx) => idx % (listNum) === (num))} />
+                    ))
+                }
+
+
+
                 </div>
             </main>
 
