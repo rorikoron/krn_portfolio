@@ -4,7 +4,6 @@ import style from './page.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import PictureList from '../components/PictureList';
 import { PictureProps } from '../components/PictureFrame';
-import { list } from '@vercel/blob';
 
 
 const Page: NextPage = () => {
@@ -77,7 +76,7 @@ const Page: NextPage = () => {
 
                 {
                     [...Array(listNum)].map((_, num) => (
-                        <PictureList blobs={blobs.filter((_, idx) => idx % (listNum) === (num))} />
+                        <PictureList key={num} blobs={blobs.filter((_, idx) => idx % (listNum) === (num))} />
                     ))
                 }
 
