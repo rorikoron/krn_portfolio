@@ -2,12 +2,13 @@
     position: relative;
     &::before{
         content: "";
-        height: 60dvh;
+        height: min(60dvh, 60dvw);
         aspect-ratio: 1 / 1;
         object-fit: cover;
         background: center/100% url("/images/steakholder.png") no-repeat;
         position: absolute;
         bottom: 0;
+        z-index: -1;
         animation: entry 0.6s forwards ease-out;
     }
 }
@@ -21,30 +22,41 @@
     }
 }
 .content{
-    padding: 6rem 4rem;
+
+    --gap-vertical-content: 4.8rem;
+    --gap-horizontal-content: 3.6rem;
+    --font-size: 2.8rem;
+
+    padding: var(--padding-vertical-content) var(--padding-horizontal-content);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
-    gap: 4.8rem 3.6rem;
-    width: 80%;
+    gap: var(--gap-vertical-content) var(--gap-horizontal-content);
+    width: 96%;
 }
 
 .group{
+
+    --gap-vertical-list: 3.2rem;
+    --gap-horizontal-list: 3.2rem;
+    --height-list: 4.6rem;
+    --padding-bottom-title: 1.4rem;
+
     display: inline-block;
     width: fit-content;
     &__title{
         display: inline-block;
-        font-size: 2.8rem;
-        padding-bottom: 1.4rem;
+        font-size: var(--font-size);
+        padding-bottom: var(--padding-bottom-title);
         font-family: var(--font-zenkaku-gothic-medium);
     }
 
     &__link{
-        height: 4.6rem;
+        height: var(--height-list);
         list-style: none;
         display: flex;
-        gap: 32px;
+        gap: var(--gap-vertical-list) var(--gap-horizontal-list);
         padding: 0 8px;
         flex-direction: row;
         font-family: var(--font-zenkaku-gothic-regular);
@@ -58,9 +70,42 @@
         }
 
     }
+}
 
-    
-    &:not(:last-child){
-        margin-right: 2.2rem;
+
+@media screen and (max-width: 960px){
+    .content{
+        --gap-vertical-content: 3.2rem;
+        --gap-horizontal-content: 2.6rem;
+        --font-size: 3.6rem;
+
+        .group{
+            --height-list: 5.6rem;
+        }
+        
+    }
+}
+@media screen and (max-width: 460px){
+    .content{
+        --gap-vertical-content: 3rem;
+        --gap-horizontal-content: 1.2rem;
+        --font-size: 2.6rem;
+        flex-direction: column;
+
+        .group{
+            --height-list: 4.6rem;
+            --padding-bottom-title: 1rem;
+
+            &__link{
+
+                --gap-vertical-list: 2rem;
+                flex-wrap: wrap;
+                height: fit-content;
+                > li{
+                    height: var(--height-list);
+                }
+            }
+
+        }
     }
 }

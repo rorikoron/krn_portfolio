@@ -1,5 +1,8 @@
 
 .article{
+    --font-size: 1.8rem;
+
+
     height: 100%;
     width: 100%;
     padding: max(2.5%, 8px);
@@ -54,13 +57,26 @@
     flex-grow: 1;
     height: 100%;
     padding-left: max(2.5%, 8px);
-    font-size: 1.8rem;
+    font-size: var(--font-size);
     text-wrap: nowrap;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     
     > small{
         text-align: right;
+    }
+}
+
+@media screen and (max-width: 960px){
+    
+    .article{
+        --font-size: 2.52rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .article{
+        --font-size: 1.4rem;
     }
 }
