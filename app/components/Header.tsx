@@ -3,10 +3,12 @@
 import Link from 'next/link'
 import styles from './Header.module.scss'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react';
 
 export default function Header(){
 
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const listItems = [
         { path: '/', label: 'Home'},
@@ -17,7 +19,7 @@ export default function Header(){
     ]
     
     return(
-        <header className={styles.header}>
+        <header className={styles.header} data-isOpen={isOpen} onBlur={ () => setIsOpen(false)} onClick={ ()=> setIsOpen(!isOpen)}>
 
             <ul className={styles.list}>
             {

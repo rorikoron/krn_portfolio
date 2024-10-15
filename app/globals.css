@@ -22,6 +22,7 @@
   --padding-vertical-content: 3dvh;
   --padding-horizontal-content: 3dvw;
 
+  --padding-top-body: 28px;
 
   --header-width: max(17dvw, 200px);
   --padding-header-disable: 10px;
@@ -63,8 +64,8 @@ body {
   width: 100dvw;
 }
 body > section{
-  height: calc(100dvh - 28px);
-  margin-top: 28px;
+  height: calc(100dvh - var(--padding-top-body));
+  margin-top: var(--padding-top-body);
   margin-left: var(--header-width);
   display: grid;
   grid-template-rows: max-content max-content 1fr;
@@ -100,9 +101,14 @@ a {
   body > section{
     margin-left: var(--padding-header-disable);
   }
+
+  
 }
 
 @media screen and (max-width: 960px){
+  :root{
+    --padding-top-body: 20px;
+  }
   html, body{
     font-size: 9px;
   }
