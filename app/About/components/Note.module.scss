@@ -14,7 +14,8 @@
     background: var(--color-blue-tint);
     border-radius: var(--border-radius);
     padding: var(--padding-vertical-parent) var(--padding-horizontal-parent);
-    
+    clip-path: (0 0 100% 100%);
+
     &::before{
         content: "Add a note about this user";
         color: var(--color-emphasize);
@@ -108,7 +109,7 @@
     }
 }
 
-@media screen and (max-width: 460px) and (min-height: 800px){
+@media screen and (max-width: 680px) and (min-height: 800px){
     .note{
 
         --font-size: 2.4rem;
@@ -122,7 +123,7 @@
     
 }
 
-@media screen and (max-width: 420px) and (max-height: 800px){
+@media screen and (max-width: 680px) and (max-height: 800px){
     .note{
 
         --font-size: 1.6rem;

@@ -1,19 +1,9 @@
 .header{
     width: var(--header-width);
-    background: color-mix(in srgb, var(--background) 90%, transparent);
     height: 100vh;
     position: fixed;
     z-index: 1;
 
-    &::before{
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(2px);
-    }
 }
 
 .list{
@@ -67,6 +57,7 @@
         padding-top: 16dvh;
     }
     .header{
+        background: color-mix(in srgb, var(--background) 90%, transparent);
 
         --size-icon: 3rem;
         right: calc(-1 * var(--header-width));
@@ -84,6 +75,16 @@
                 right: calc(var(--header-width) - 4rem);
             }
         }
+        
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(2px);
+    }
         &::after{
             content: "";
             position: fixed;
