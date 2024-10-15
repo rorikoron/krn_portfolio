@@ -26,7 +26,7 @@ const Page : NextPage = () => {
     
     const onClickEvent = (object : ItemKeys) => { setKeys(object); };
     return(
-        <section>
+        <section className={`${style.section}`}>
             <h1>Product</h1>
             <h2>拙いながらBlenderで作った3Dモデルを載せときます...</h2>
 
@@ -41,13 +41,16 @@ const Page : NextPage = () => {
                     : <ModelViewer {...keys}/>
             )}
                 </div>
-                <aside className={`${style.content__models}`}>
-                    {
-                        itemParams.map((item) => ((
-                            <ModelSelector key={item.fileName} {...item} onClickEvent={onClickEvent}/>
-                        )))
-                    }
-                </aside>
+                <div>
+
+                    <aside className={`${style.content__models}`}>
+                        {
+                            itemParams.map((item) => ((
+                                <ModelSelector key={item.fileName} {...item} onClickEvent={onClickEvent}/>
+                            )))
+                        }
+                    </aside>
+                </div>
             </main>
         </section>
     )
