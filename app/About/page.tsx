@@ -50,6 +50,8 @@ const Page : NextPage = () => {
                 </section>
                 <section className={`${style.introduction}`}>
                     <Note defaultText={defaultText}/>
+                    {// TODO: Adjust height when responsive
+                    }
                     <div className={`${style.introduction__content}`}>
 
                         <p>改変力なし</p>

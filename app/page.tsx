@@ -1,8 +1,10 @@
 import { NextPage } from 'next'
+
+// TODO: Make HomePage
 const Page : NextPage = () => {
 
     return(
-        <div></div>
+        <div>Rorikoron</div>
     )
 }
 

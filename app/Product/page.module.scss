@@ -45,9 +45,14 @@
     }
     .content{
         grid-template-columns: 1fr;
-        grid-template-rows: max-content 1fr;
+        grid-template-rows: min(60dvh, 60dvw) 1fr;
         overflow-y: hidden;
         gap: 20px;
+
+        &__viewer{
+            height: 100%;
+            place-self: center;
+        }
 
         &__models{
             padding: 0;
