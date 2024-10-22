@@ -2,10 +2,12 @@
     width: var(--header-width);
     height: 100vh;
     position: fixed;
-    z-index: 1;
+    backdrop-filter: blur(6px);
 
 }
-
+.icon{
+    display: none;
+}
 .list{
     padding: 5.2rem 4.6rem;
 
@@ -28,7 +30,7 @@
 
     &.selected{
         font-size: 3.4rem;
-        color: rgb(56, 56, 56);
+        color: rgb(255, 245, 246);
         margin: 2rem 0;
         padding-left: 1rem;
     }
@@ -40,7 +42,7 @@
         content: "";
         width: 0;
         height: 1px;
-        background-color: var(--color-gray-tone);
+        background-color: var(--color-gray-tint);
         position: absolute;
         bottom: 0;
         transition: all 0.4s;
@@ -56,12 +58,33 @@
     .list{
         padding-top: 16dvh;
     }
-    .header{
-        background: color-mix(in srgb, var(--background) 90%, transparent);
+    .icon{
+        display:block;
+        
+        position: fixed;
+        left: calc(-1 * 4.6rem - 4rem);
+        top: calc(var(--padding-top-body) + 2.3rem);
+        z-index: 5;
 
+        height: var(--size-icon);
+        aspect-ratio: 1 / 1;
+        mask-image: url("/images/bars-solid.svg");
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        background: var(--foreground);
+
+        transition: all 0.4s;
+
+        &[data-isOpen="true"]{
+            left: 4.6rem;
+        }
+    }
+    .header{
+        background: color-mix(in srgb, var(--foreground) 20%, transparent);
+        backdrop-filter: blur(10px);
+        z-index: 3;
         --size-icon: 3rem;
         right: calc(-1 * var(--header-width));
-        pointer-events: none;
         transition: all 0.4s;
         .listChild{
             pointer-events: all;
@@ -71,9 +94,6 @@
             right: 0;
             width: calc(var(--header-width) + 4.6rem);
 
-            &::after{
-                right: calc(var(--header-width) - 4rem);
-            }
         }
         
     &::before{
@@ -87,20 +107,6 @@
     }
         &::after{
             content: "";
-            position: fixed;
-            right: 4rem;
-            top: calc(var(--padding-top-body) + 2.3rem);
-            z-index: 2;
-
-            pointer-events: all;
-            height: var(--size-icon);
-            aspect-ratio: 1 / 1;
-            mask-image: url("/images/bars-solid.svg");
-            mask-repeat: no-repeat;
-            mask-size: cover;
-            background: var(--foreground);
-
-            transition: all 0.4s;
 
         }
     }

@@ -19,8 +19,8 @@ export default function Header(){
     ]
     
     return(
-        <header className={styles.header} data-isOpen={isOpen} onBlur={ () => setIsOpen(false)} onClick={ ()=> setIsOpen(!isOpen)}>
-
+        <header className={styles.header} data-isOpen={isOpen} onBlur={ () => setIsOpen(false)}>
+            <span className={styles.icon} data-isOpen={isOpen} onClick={ ()=> setIsOpen(!isOpen)}  />
             <ul className={styles.list}>
             {
                 listItems.map((item) => (

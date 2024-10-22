@@ -46,6 +46,8 @@
     display: inline-block;
     width: fit-content;
     &__title{
+        color: var(--color-main);
+        
         display: inline-block;
         font-size: var(--font-size);
         padding-bottom: var(--padding-bottom-title);
@@ -67,6 +69,11 @@
         a {
             display: block;
             height: 100%;
+
+            > article{
+                background: color-mix(in srgb, var(--background) 70%, transparent) ;
+
+            }
         }
 
     }

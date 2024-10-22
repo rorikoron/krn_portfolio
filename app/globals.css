@@ -11,13 +11,13 @@
   --color-main-tone: rgba(168, 85, 85, 0.8);
   --color-base: rgb(228, 228, 228);
   --color-emphasize: #fbfbfb;
-  --color-gray-tint: rgb(152, 152, 152);
+  --color-gray-tint: rgba(239, 223, 224, 0.47);
   --color-gray-tone: rgb(99, 99, 99, 0.7);
 
-  --color-blue-vivid: rgb(196, 233, 255);
+  --color-blue-vivid: rgb(255, 233, 207);
   --color-blue: rgb(110, 147, 182);
-  --color-blue-tint: rgb(212, 211, 216);
-  --color-blue-tone: rgb(59, 58, 65);
+  --color-blue-tint: rgba(123, 106, 95, 0.83);
+  --color-blue-tone: rgb(52, 48, 44);
 
   --padding-vertical-content: 3dvh;
   --padding-horizontal-content: 3dvw;
@@ -62,6 +62,8 @@ body {
   flex-direction: column;
   height: 100dvh;
   width: 100dvw;
+  background: url('/images/Home_W.png') no-repeat center;
+  background-size: cover;
 }
 body > section{
   height: calc(100dvh - var(--padding-top-body));
@@ -74,10 +76,14 @@ body > section{
 section h1{
   font-family: var(--font-zenkaku-gothic-medium);
   font-size: 4.6rem;
+  color: var(--color-main);
+  pointer-events: none;
 }
 section h2{
   font-size: 1.8rem;
   font-family: var(--font-zenkaku-gothic-regular);
+  color: var(--color-main);
+  pointer-events: none;
 }
 
 * {
@@ -98,6 +104,10 @@ a {
 }
 
 @media screen and (max-width: 680px){
+  body{
+    background: url('/images/Home_H.png') no-repeat center;
+    background-size: cover;
+  }
   body > section{
     margin-left: var(--padding-header-disable);
   }
