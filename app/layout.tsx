@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       locale: 'ja_JP',
       images: [
           {
-              url: './images/steakholder.png',
+              url: './images/Home_W.png',
               width: 1200,
               height: 630,
               alt: 'png for OGP'
