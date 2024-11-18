@@ -23,7 +23,7 @@ const data = [
         category : "干し芋",
         info: [
             { title: "Booth", logo: "booth", link: "https://booth.pm/wish_list_names/poPToaBg" },
-            { title: "Amazon", logo: "amazon", link: "https://www.amazon.co.jp/hz/wishlist/dl/invite/aEWguEj?ref_=wl_share"}
+            { title: "Amazon", logo: "amazon", link: "https://www.amazon.co.jp/hz/wishlist/dl/invite/84jAvJF?ref_=wl_share"}
         ]
     },{
         category : "その他",
