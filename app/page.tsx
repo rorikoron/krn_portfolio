@@ -1,14 +1,6 @@
-import { NextPage } from 'next'
-import style from './page.module.css'
+import { redirect } from 'next/navigation'
 
-
-// TODO: Make HomePage
-const Page : NextPage = () => {
-
-    return(
-        <main className={`${style.main}`}>Rorikoron</main>
-    )
+export default function Home() {
+  // Server-side redirect to the canonical site
+  redirect('https://rorikoron.net/')
 }
-
-
-export default Page;
