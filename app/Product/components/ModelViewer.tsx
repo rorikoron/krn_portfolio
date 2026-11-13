@@ -9,17 +9,13 @@ import ImageButton from '../../components/ImageButton';
 
 const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
     const myModel = useFBX(`/models/${fileName}.fbx`);
-    const Thumbnail : React.FC = () => {
-        return(
-            <Image className={`${style.link__logo}`} src={`/logo/booth.svg`} fill={true} alt='Boothのロゴ画像'/>
-        )
-    }
-    const Caption : React.FC = () => { 
-        return(
-            <span className={`${style.link__legend}`}>Booth</span>
-        )
-    }
-    
+    const thumbnail = (
+        <Image className={`${style.link__logo}`} src={`/logo/booth.svg`} fill={true} alt='Boothのロゴ画像'/>
+    )
+    const caption = (
+        <span className={`${style.link__legend}`}>Booth</span>
+    )
+
     return (
         <>
             <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 10, 24] }} style={{background: "#FFFFFF", borderRadius: 8}}>
@@ -29,7 +25,7 @@ const ModelViewer : NextPage<ItemKeys> = ({serial, fileName}) => {
                 <OrbitControls />
             </Canvas>
             <Link className={`${style.link}`} href={`https://booth.pm/ja/items/${serial}`} rel="noopener noreferrer" target="_blank">
-                <ImageButton key="booth" Thumbnail={<Thumbnail />} Caption={<Caption />} />
+                <ImageButton key="booth" Thumbnail={thumbnail} Caption={caption} />
             </Link>
         </>
     );

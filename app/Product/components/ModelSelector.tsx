@@ -24,18 +24,16 @@ const ModelSelector: React.FC<ItemValues> = ({label, fileName, time, serial, onC
         skeleton: true,
     }
 
-    const Caption : React.FC = () => {
-        return(
-            <>
-                <cite className={`${style.cite}`}>{label}</cite>
-                <small><time>{time}</time></small>
-            </>
-        )
-    }
+    const caption = (
+        <>
+            <cite className={`${style.cite}`}>{label}</cite>
+            <small><time>{time}</time></small>
+        </>
+    )
 
     return(
         <div onClick={ () => onClickEvent({serial, fileName}) }>
-            <ImageButton key={fileName} Caption={<Caption />} Thumbnail={<Picture {...props} />} />
+            <ImageButton key={fileName} Caption={caption} Thumbnail={<Picture {...props} />} />
         </div>
     )
 }

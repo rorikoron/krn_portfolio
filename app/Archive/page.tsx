@@ -35,6 +35,7 @@ const Page: NextPage = () => {
 
     useEffect(() => {
         // fetch window size and set data attribute
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- window size is unknown during SSR, so it can't be the initial state
         changeListNum();
         window.addEventListener("resize", changeListNum);
 

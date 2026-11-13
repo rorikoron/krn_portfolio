@@ -1,4 +1,8 @@
 import { glob } from "glob"
+
+// Not dynamic (the default since Next 15): on Vercel, public/ files aren't bundled into the function,
+// so a runtime glob would find nothing. Listing them at build time keeps the Archive populated.
+export const dynamic = "force-static"
 export async function GET() {
   try {
     const files = glob.sync("./public/archive/*.png");

@@ -19,6 +19,7 @@ const RedirectModal = () => {
         try {
             stayed = sessionStorage.getItem(STAY_KEY) === '1'
         } catch {}
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- reading browser-only storage after hydration is exactly what this effect is for
         if (!stayed) setOpen(true)
     }, [])
 
