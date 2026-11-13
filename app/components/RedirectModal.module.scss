@@ -1,0 +1,113 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+    width: min(420px, 100%);
+    padding: 28px 24px 22px;
+    border-radius: 12px;
+    background: var(--background);
+    color: var(--foreground);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    font-family: var(--font-zenkaku-gothic-regular);
+    animation: popIn 0.25s ease-out;
+}
+
+.title {
+    font-family: var(--font-zenkaku-gothic-bold);
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.desc {
+    font-size: 1.5rem;
+    line-height: 1.7;
+
+    a {
+        color: var(--color-main-tone);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+.countdown {
+    margin-top: 16px;
+    font-size: 1.3rem;
+    color: var(--color-gray-tone);
+}
+
+.progress {
+    height: 3px;
+    margin-top: 6px;
+    border-radius: 2px;
+    background: var(--color-main-tone);
+    transform-origin: left;
+    animation-name: shrink;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stay,
+.go {
+    font: inherit;
+    font-size: 1.4rem;
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.stay {
+    background: var(--btn-idle);
+    color: var(--foreground);
+
+    &:hover {
+        background: var(--btn-hover);
+    }
+}
+
+.go {
+    background: var(--color-main-tone);
+    color: #fff;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes shrink {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .overlay, .modal, .progress { animation: none; }
+}

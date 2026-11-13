@@ -4,6 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import "./globals.css";
 import Header from './components/Header'
+import RedirectModal from './components/RedirectModal'
 const robotoMono = localFont({
   src: "./fonts/RobotoMono-Light.ttf",
   variable: "--font-roboto-mono",
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body className={`${robotoMono.variable} ${zenkakuGothicLight.variable} ${zenkakuGothicMedium.variable} ${zenkakuGothicRegular.variable} ${zenkakuGothicBold.variable}`}>
         <Header />
         {children}
+        <RedirectModal />
       </body>
 
       <GoogleAnalytics gaId="G-QCVSBLDSR9" />
